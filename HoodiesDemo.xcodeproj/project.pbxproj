@@ -26,6 +26,8 @@
 		B112D3A2246D3A73004C0F0D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */; };
 		B112D3A6246D6C27004C0F0D /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A4246D6C27004C0F0D /* ServiceTableViewCell.swift */; };
 		B112D3A7246D6C27004C0F0D /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B112D3A5246D6C27004C0F0D /* ServiceTableViewCell.xib */; };
+		B112D3AA246D7777004C0F0D /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A9246D7777004C0F0D /* NameViewController.swift */; };
+		B112D3AE246D7D4E004C0F0D /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		B112D3A4246D6C27004C0F0D /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3A5246D6C27004C0F0D /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
+		B112D3A9246D7777004C0F0D /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B112D38C246D06FD004C0F0D /* ListShow */,
+				B112D3A8246D7747004C0F0D /* NameShow */,
 				B112D38D246D070E004C0F0D /* ServiceShow */,
 			);
 			path = Scenes;
@@ -149,6 +154,7 @@
 				B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */,
 				B112D395246D09A8004C0F0D /* String+Extensions.swift */,
 				B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */,
+				B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,6 +183,14 @@
 				B112D3A5246D6C27004C0F0D /* ServiceTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B112D3A8246D7747004C0F0D /* NameShow */ = {
+			isa = PBXGroup;
+			children = (
+				B112D3A9246D7777004C0F0D /* NameViewController.swift */,
+			);
+			path = NameShow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,7 @@
 				B112D38B246D059C004C0F0D /* MainTabBarController.swift in Sources */,
 				B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */,
 				B112D3A2246D3A73004C0F0D /* Date+Extensions.swift in Sources */,
+				B112D3AE246D7D4E004C0F0D /* UINavigationController+Extensions.swift in Sources */,
 				B112D399246D16C1004C0F0D /* CD.swift in Sources */,
 				B112D36E246D01EE004C0F0D /* AppDelegate.swift in Sources */,
 				B112D38F246D0742004C0F0D /* ListViewController.swift in Sources */,
@@ -267,6 +282,7 @@
 				B112D394246D080A004C0F0D /* BaseViewController.swift in Sources */,
 				B112D370246D01EE004C0F0D /* SceneDelegate.swift in Sources */,
 				B112D3A6246D6C27004C0F0D /* ServiceTableViewCell.swift in Sources */,
+				B112D3AA246D7777004C0F0D /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

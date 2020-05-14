@@ -9,12 +9,30 @@
 import UIKit
 
 class ListViewController: BaseViewController {
+    // MARK: - Properties
+    
+    
     // MARK: - Class functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+    }
+        
+    
+    // MARK: - Custom functions
+    private func setupView() {
+        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add,
+                                                                  target: self,
+                                                                  action: #selector(addButttonTapped))
+
+        
     }
     
     
-    // MARK: - Custom functions
+    // MARK: - Actions
+    @objc func addButttonTapped(_ sender: UIBarButtonItem) {
+        Logger.log(message: "run", event: .debug)
+        self.show(NameViewController(), sender: nil)
+    }
 }

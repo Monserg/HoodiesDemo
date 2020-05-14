@@ -69,7 +69,7 @@ class ServiceViewController: BaseViewController {
         self.queue.async(execute: self.dispatchWorkItem)
     }
     
-    func setupView() {
+    private func setupView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UINib(nibName: "ServiceTableViewCell", bundle: nil), forCellReuseIdentifier: "ServiceTableViewCell")

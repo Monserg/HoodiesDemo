@@ -15,7 +15,9 @@ enum ModeType {
 
 class NameViewController: UIViewController {
     // MARK: - Properties
+    var item: Item?
     var mode: ModeType
+    
     lazy var nameTextField: UITextField = {
         let nameTextFieldInstance = UITextField()
         nameTextFieldInstance.placeholder = "enter item name".localize()
@@ -31,7 +33,8 @@ class NameViewController: UIViewController {
     
     
     // MARK: - Initialization
-    init(modeType: ModeType = .add) {
+    init(modeType: ModeType = .add, item: Item? = nil) {
+        self.item = item
         self.mode = modeType
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
@@ -59,6 +62,7 @@ class NameViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = newBackButton
 
         view.addSubview(nameTextField)
+        nameTextField.text = self.item?.name
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -98,7 +102,7 @@ class NameViewController: UIViewController {
         
         // Add tap
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTepped))
-        self.view.addGestureRecognizer(tapGesture)
+        self.view.addGestureRecognizer(tapGesture)        
     }
     
     

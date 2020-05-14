@@ -28,7 +28,6 @@ class ServiceViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,7 @@ class ServiceViewController: BaseViewController {
         setupView()
         loadData()
     }
-    
+        
     override func viewDidDisappear(_ animated: Bool) {
         Logger.log(message: "dispatchWorkItem.cancel", event: .debug)
 
@@ -50,7 +49,7 @@ class ServiceViewController: BaseViewController {
 
     
     // MARK: - Custom functions
-    private func loadData() {
+    func loadData() {
         self.start()
         
         self.dispatchWorkItem = DispatchWorkItem {

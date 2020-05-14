@@ -13,6 +13,7 @@
 "done" = "done";
 "list" = "list";
 "error" = "error";
+"delete" = "delete";
 "cancel" = "cancel";
 "revert" = "revert";
 "service" = "service";

@@ -26,8 +26,9 @@
 		B112D3A6246D6C27004C0F0D /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A4246D6C27004C0F0D /* ServiceTableViewCell.swift */; };
 		B112D3A7246D6C27004C0F0D /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B112D3A5246D6C27004C0F0D /* ServiceTableViewCell.xib */; };
 		B112D3AA246D7777004C0F0D /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A9246D7777004C0F0D /* NameViewController.swift */; };
-		B112D3AE246D7D4E004C0F0D /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */; };
 		B112D3B2246D93E0004C0F0D /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3B1246D93E0004C0F0D /* ActionButton.swift */; };
+		B112D3B9246DB051004C0F0D /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3B8246DB051004C0F0D /* UITableViewCell+Extensions.swift */; };
+		B112D3BC246DB855004C0F0D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3BB246DB855004C0F0D /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +54,9 @@
 		B112D3A4246D6C27004C0F0D /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3A5246D6C27004C0F0D /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
 		B112D3A9246D7777004C0F0D /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		B112D3B1246D93E0004C0F0D /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		B112D3B8246DB051004C0F0D /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		B112D3BB246DB855004C0F0D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		B112D38C246D06FD004C0F0D /* ListShow */ = {
 			isa = PBXGroup;
 			children = (
+				B112D3BA246DB84A004C0F0D /* Models */,
 				B112D38E246D0742004C0F0D /* ListViewController.swift */,
 			);
 			path = ListShow;
@@ -153,7 +156,7 @@
 			children = (
 				B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */,
 				B112D395246D09A8004C0F0D /* String+Extensions.swift */,
-				B112D3AD246D7D4E004C0F0D /* UINavigationController+Extensions.swift */,
+				B112D3B8246DB051004C0F0D /* UITableViewCell+Extensions.swift */,
 				B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -191,6 +194,14 @@
 				B112D3A9246D7777004C0F0D /* NameViewController.swift */,
 			);
 			path = NameShow;
+			sourceTree = "<group>";
+		};
+		B112D3BA246DB84A004C0F0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B112D3BB246DB855004C0F0D /* Item.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,11 +282,12 @@
 				B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */,
 				B112D3A2246D3A73004C0F0D /* Date+Extensions.swift in Sources */,
 				B112D3B2246D93E0004C0F0D /* ActionButton.swift in Sources */,
-				B112D3AE246D7D4E004C0F0D /* UINavigationController+Extensions.swift in Sources */,
 				B112D399246D16C1004C0F0D /* CD.swift in Sources */,
 				B112D36E246D01EE004C0F0D /* AppDelegate.swift in Sources */,
+				B112D3B9246DB051004C0F0D /* UITableViewCell+Extensions.swift in Sources */,
 				B112D38F246D0742004C0F0D /* ListViewController.swift in Sources */,
 				B112D396246D09A8004C0F0D /* String+Extensions.swift in Sources */,
+				B112D3BC246DB855004C0F0D /* Item.swift in Sources */,
 				B112D3A0246D3A49004C0F0D /* Logger.swift in Sources */,
 				B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */,
 				B112D392246D07D2004C0F0D /* UIViewController+Extensions.swift in Sources */,

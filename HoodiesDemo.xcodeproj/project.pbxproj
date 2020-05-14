@@ -21,6 +21,7 @@
 		B112D396246D09A8004C0F0D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D395246D09A8004C0F0D /* String+Extensions.swift */; };
 		B112D399246D16C1004C0F0D /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D398246D16C1004C0F0D /* CD.swift */; };
 		B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39B246D1868004C0F0D /* ParserManager.swift */; };
+		B112D39E246D2B9C004C0F0D /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39D246D2B9C004C0F0D /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B112D395246D09A8004C0F0D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B112D398246D16C1004C0F0D /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
 		B112D39B246D1868004C0F0D /* ParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserManager.swift; sourceTree = "<group>"; };
+		B112D39D246D2B9C004C0F0D /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				B112D393246D080A004C0F0D /* BaseViewController.swift */,
 				B112D38A246D059C004C0F0D /* MainTabBarController.swift */,
+				B112D39D246D2B9C004C0F0D /* Spinner.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B112D39E246D2B9C004C0F0D /* Spinner.swift in Sources */,
 				B112D38B246D059C004C0F0D /* MainTabBarController.swift in Sources */,
 				B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */,
 				B112D399246D16C1004C0F0D /* CD.swift in Sources */,

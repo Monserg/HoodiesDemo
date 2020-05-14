@@ -12,6 +12,7 @@ class ParserManager: XMLParser {
     // MARK: - Properties
     var itemCD: CD!
     var catalog: [CD]!
+    var completed: (([CD]) -> Void)?
     private var elementName: String!
 }
 
@@ -66,6 +67,16 @@ extension ParserManager: XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        print(self.catalog ?? "XXX")
+        print(catalog ?? "XXX")
+        self.completed!(catalog)
+    }
+    
+    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        print(parseError)
+
+        self.elementName = nil
+        self.itemCD = nil
+        self.catalog = nil
+
     }
 }

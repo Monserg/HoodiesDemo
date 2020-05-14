@@ -9,6 +9,11 @@
 import UIKit
 
 class ServiceViewController: BaseViewController {
+    // MARK: - Properties
+    var dispatchWorkItem: DispatchWorkItem!
+    let queue = DispatchQueue.global(qos: .userInitiated)
+    
+    
     // MARK: - Class functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +26,30 @@ class ServiceViewController: BaseViewController {
         loadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.stop()
+        print("cancel")
+        dispatchWorkItem.cancel()
+    }
+
     
     // MARK: - Custom functions
     private func loadData() {
-        if let url = URL(string: "https://www.w3schools.com/xml/cd_catalog.xml"), let parser = ParserManager(contentsOf: url) {
-            parser.delegate = parser
-            parser.parse()
+        self.start()
+        
+        self.dispatchWorkItem = DispatchWorkItem {
+            if let url = URL(string: "https://www.w3schools.com/xml/cd_catalog.xml"), let parser = ParserManager(contentsOf: url) {
+                parser.completed = { catalog in
+                    self.stop()
+                }
+                
+                parser.delegate = parser
+                parser.parse()
+            }
         }
+
+        self.queue.async(execute: self.dispatchWorkItem)
     }
 }

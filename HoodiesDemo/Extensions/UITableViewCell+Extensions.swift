@@ -9,17 +9,17 @@
 import UIKit
 
 extension UITableViewCell {
-    func setup(withItem item: String) {
-        self.accessoryType = .checkmark
-
-        if let imageview = self.imageView {
-            imageview.image = UIImage(named: self.accessoryType == .none ? "icon-cancel-red" : "icon-ok-green")
-            imageview.layer.cornerRadius = imageview.frame.height / 2
-            imageview.clipsToBounds = true
-        }
-        
-        self.textLabel?.text = item
-        
-        self.selectionStyle = .none
-    }
+//    func setup(withItem item: String) {
+//        self.accessoryType = .checkmark
+//
+//        if let imageview = self.imageView {
+//            imageview.image = UIImage(named: self.accessoryType == .none ? "icon-cancel-red" : "icon-ok-green")
+//            imageview.layer.cornerRadius = imageview.frame.height / 2
+//            imageview.clipsToBounds = true
+//        }
+//        
+//        self.textLabel?.text = item
+//        
+//        self.selectionStyle = .none
+//    }
 }

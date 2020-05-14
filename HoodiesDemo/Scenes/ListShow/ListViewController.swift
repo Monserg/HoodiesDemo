@@ -12,7 +12,7 @@ class ListViewController: BaseViewController {
     // MARK: - Properties
     let tableView: UITableView = UITableView()
 
-    var items: [String]? {
+    var items: [Item]? {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -38,7 +38,10 @@ class ListViewController: BaseViewController {
     
     // MARK: - Custom functions
     private func loadData() {
-        self.items = ["ssssss ....", "ddd XXX"]
+        self.items = [
+            Item(id: 0, name: "ssssss ....", isChecked: false),
+            Item(id: 1, name:  "ddd XXX", isChecked: true)
+        ]
 //        self.tableView.reloadData()
     }
     
@@ -49,6 +52,7 @@ class ListViewController: BaseViewController {
 
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
 
         guard let tabBar = (self.tabBarController as? MainTabBarController)?.tabBar else { return }
         
@@ -90,16 +94,11 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = self.items?[indexPath.row] else { return UITableViewCell() }
             
-        var listCell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-
-        if( !(listCell != nil)) {
-            listCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        }
+        guard let listCell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
+                
+        listCell.setup(withItem: item)
         
-        
-        listCell!.setup(withItem: item)
-        
-        return listCell!
+        return listCell
     }
 }
 
@@ -111,19 +110,18 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-        
-            switch cell.accessoryType {
-            case .checkmark:
-                cell.accessoryType = .none
-
-            default:
-                cell.accessoryType = .checkmark
-            }
-
-            // Save to Realm
-            tableView.reloadRows(at: [indexPath], with: .fade)
-        }
+//        if let cell = tableView.cellForRow(at: indexPath) {
+//            switch cell.accessoryType {
+//            case .checkmark:
+//                cell.accessoryType = .none
+//
+//            default:
+//                cell.accessoryType = .checkmark
+//            }
+//
+//            // Save to Realm
+//            tableView.reloadRows(at: [indexPath], with: .fade)
+//        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -139,17 +137,7 @@ extension ListViewController: UITableViewDelegate {
 
         let menuDeleteButton = UITableViewRowAction(style: .normal, title: "delete".localize()) { action, index in
             self.items?.remove(at: editActionsForRowAt.row)
-
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [editActionsForRowAt], with: .left)
-            
-//            if self.items?.count == 0 {
-//                self.items = nil
-//            }
-            
-            tableView.endUpdates()
-
-//            self.tableView.deleteRows(at: [editActionsForRowAt], with: .left)
+            self.tableView.deleteRows(at: [editActionsForRowAt], with: .fade)
 
             // Delete item in Realm
             

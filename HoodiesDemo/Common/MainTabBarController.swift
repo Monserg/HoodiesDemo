@@ -20,10 +20,10 @@ class MainTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
-        let listVC = ListViewController()
-        let serviceVC = ServiceViewController()
+        let listNC = UINavigationController(rootViewController: ListViewController())
+        let serviceNC = UINavigationController(rootViewController: ServiceViewController())
         
-        let controllers = [listVC, serviceVC]
+        let controllers = [listNC, serviceNC]
         self.viewControllers = controllers
     }
 }

@@ -58,13 +58,29 @@
 			children = (
 				B112D36D246D01EE004C0F0D /* AppDelegate.swift */,
 				B112D36F246D01EE004C0F0D /* SceneDelegate.swift */,
-				B112D371246D01EE004C0F0D /* ViewController.swift */,
-				B112D373246D01EE004C0F0D /* Main.storyboard */,
-				B112D376246D01EF004C0F0D /* Assets.xcassets */,
 				B112D378246D01EF004C0F0D /* LaunchScreen.storyboard */,
-				B112D37B246D01EF004C0F0D /* Info.plist */,
+				B112D373246D01EE004C0F0D /* Main.storyboard */,
+				B112D382246D0232004C0F0D /* Scenes */,
+				B112D381246D01FB004C0F0D /* Sources */,
 			);
 			path = HoodiesDemo;
+			sourceTree = "<group>";
+		};
+		B112D381246D01FB004C0F0D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B112D376246D01EF004C0F0D /* Assets.xcassets */,
+				B112D37B246D01EF004C0F0D /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B112D382246D0232004C0F0D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B112D371246D01EE004C0F0D /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
-				INFOPLIST_FILE = HoodiesDemo/Info.plist;
+				INFOPLIST_FILE = HoodiesDemo/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
-				INFOPLIST_FILE = HoodiesDemo/Info.plist;
+				INFOPLIST_FILE = HoodiesDemo/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

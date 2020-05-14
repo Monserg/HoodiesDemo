@@ -15,7 +15,18 @@ class ServiceViewController: BaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadData()
+    }
+    
     
     // MARK: - Custom functions
-    
+    private func loadData() {
+        if let url = URL(string: "https://www.w3schools.com/xml/cd_catalog.xml"), let parser = ParserManager(contentsOf: url) {
+            parser.delegate = parser
+            parser.parse()
+        }
+    }
 }

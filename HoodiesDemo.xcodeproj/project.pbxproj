@@ -19,6 +19,8 @@
 		B112D392246D07D2004C0F0D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */; };
 		B112D394246D080A004C0F0D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D393246D080A004C0F0D /* BaseViewController.swift */; };
 		B112D396246D09A8004C0F0D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D395246D09A8004C0F0D /* String+Extensions.swift */; };
+		B112D399246D16C1004C0F0D /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D398246D16C1004C0F0D /* CD.swift */; };
+		B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39B246D1868004C0F0D /* ParserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B112D393246D080A004C0F0D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B112D395246D09A8004C0F0D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B112D398246D16C1004C0F0D /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
+		B112D39B246D1868004C0F0D /* ParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				B112D373246D01EE004C0F0D /* Main.storyboard */,
 				B112D389246D056B004C0F0D /* Common */,
 				B112D390246D07B5004C0F0D /* Extensions */,
+				B112D39A246D184B004C0F0D /* Managers */,
 				B112D382246D0232004C0F0D /* Scenes */,
 				B112D381246D01FB004C0F0D /* Sources */,
 			);
@@ -94,8 +99,8 @@
 		B112D382246D0232004C0F0D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B112D38D246D070E004C0F0D /* ServiceShow */,
 				B112D38C246D06FD004C0F0D /* ListShow */,
+				B112D38D246D070E004C0F0D /* ServiceShow */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		B112D38D246D070E004C0F0D /* ServiceShow */ = {
 			isa = PBXGroup;
 			children = (
+				B112D397246D169B004C0F0D /* Model */,
 				B112D371246D01EE004C0F0D /* ServiceViewController.swift */,
 			);
 			path = ServiceShow;
@@ -132,6 +138,22 @@
 				B112D395246D09A8004C0F0D /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B112D397246D169B004C0F0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B112D398246D16C1004C0F0D /* CD.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B112D39A246D184B004C0F0D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B112D39B246D1868004C0F0D /* ParserManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,9 +231,11 @@
 			files = (
 				B112D38B246D059C004C0F0D /* MainTabBarController.swift in Sources */,
 				B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */,
+				B112D399246D16C1004C0F0D /* CD.swift in Sources */,
 				B112D36E246D01EE004C0F0D /* AppDelegate.swift in Sources */,
 				B112D38F246D0742004C0F0D /* ListViewController.swift in Sources */,
 				B112D396246D09A8004C0F0D /* String+Extensions.swift in Sources */,
+				B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */,
 				B112D392246D07D2004C0F0D /* UIViewController+Extensions.swift in Sources */,
 				B112D394246D080A004C0F0D /* BaseViewController.swift in Sources */,
 				B112D370246D01EE004C0F0D /* SceneDelegate.swift in Sources */,

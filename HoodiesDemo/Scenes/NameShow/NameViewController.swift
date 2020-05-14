@@ -16,6 +16,18 @@ enum ModeType {
 class NameViewController: UIViewController {
     // MARK: - Properties
     var mode: ModeType
+    lazy var nameTextField: UITextField = {
+        let nameTextFieldInstance = UITextField()
+        nameTextFieldInstance.placeholder = "enter item name".localize()
+        nameTextFieldInstance.font = .systemFont(ofSize: 20.0, weight: .medium)
+        nameTextFieldInstance.keyboardType = .default
+        nameTextFieldInstance.borderStyle = .roundedRect
+        nameTextFieldInstance.clearButtonMode = .whileEditing
+        
+        nameTextFieldInstance.delegate = self
+        
+        return nameTextFieldInstance
+    }()
     
     
     // MARK: - Initialization
@@ -41,5 +53,60 @@ class NameViewController: UIViewController {
     // MARK: - custom functions
     private func setupView() {
         self.title = (self.mode == .add ? "add" : "edit").localize()
+        
+        view.addSubview(nameTextField)
+        nameTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60.0),
+            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64.0),
+            nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 48),
+            nameTextField.heightAnchor.constraint(equalToConstant: 54.0)
+        ])
+
+        let buttonsStackView = UIStackView()
+        buttonsStackView.axis = .horizontal
+        buttonsStackView.alignment = .center
+        buttonsStackView.distribution = .fillProportionally
+        buttonsStackView.spacing = 20.0
+        
+        let doneButton = ActionButton(frame: .zero, title: "done", titleColor: .black, actionHandler: {
+            Logger.log(message: "done", event: .debug)
+
+        })
+
+        let revertButton = ActionButton(frame: .zero, title: "revert", titleColor: .red, borderColor: .red, actionHandler: {
+            Logger.log(message: "revert", event: .debug)
+            self.navigationController?.popViewController(animated: true)
+        })
+
+        buttonsStackView.addArrangedSubview(revertButton)
+        buttonsStackView.addArrangedSubview(doneButton)
+
+        view.addSubview(buttonsStackView)
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -69.0)
+        ])
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension NameViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textField.text = nil
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
 }

@@ -8,5 +8,8 @@
 
 "add" = "add";
 "edit" = "edit";
+"done" = "done";
 "list" = "list";
+"revert" = "revert";
 "service" = "service";
+"enter item name" = "enter item name";

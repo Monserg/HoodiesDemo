@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListViewController.swift
 //  HoodiesDemo
 //
 //  Created by Sergey Monastyrskiy on 14.05.2020.
@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: BaseViewController {
     // MARK: - Class functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    
+    // MARK: - Custom functions
 }

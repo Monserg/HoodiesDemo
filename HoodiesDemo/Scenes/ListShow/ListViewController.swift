@@ -110,18 +110,9 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let cell = tableView.cellForRow(at: indexPath) {
-//            switch cell.accessoryType {
-//            case .checkmark:
-//                cell.accessoryType = .none
-//
-//            default:
-//                cell.accessoryType = .checkmark
-//            }
-//
-//            // Save to Realm
-//            tableView.reloadRows(at: [indexPath], with: .fade)
-//        }
+        if let cell = tableView.cellForRow(at: indexPath) as? ListTableViewCell {
+            self.show(NameViewController(modeType: .edit, item: cell.item), sender: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

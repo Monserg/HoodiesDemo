@@ -35,7 +35,7 @@ class BaseViewController: UIViewController {
     // MARK: - Custom functions
     func setupTabBarItem() {
         let tabBarIndex = isKind(of: ListViewController.self) ? 0 : 1
-        print("\(tabBarIndex)")
+        Logger.log(message: "tabBarIndex = \(tabBarIndex)", event: .debug)
         
         self.view.backgroundColor = .white
         self.title = (tabBarIndex == 0 ? "list" : "service").localize()

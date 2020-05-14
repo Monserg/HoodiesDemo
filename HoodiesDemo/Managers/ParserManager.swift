@@ -67,12 +67,12 @@ extension ParserManager: XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        print(catalog ?? "XXX")
+        Logger.log(message: catalog.description, event: .debug)
         self.completed!(catalog)
     }
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-        print(parseError)
+        Logger.log(message: parseError.localizedDescription, event: .error)
 
         self.elementName = nil
         self.itemCD = nil

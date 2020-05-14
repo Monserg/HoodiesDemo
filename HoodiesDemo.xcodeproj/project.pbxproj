@@ -22,6 +22,8 @@
 		B112D399246D16C1004C0F0D /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D398246D16C1004C0F0D /* CD.swift */; };
 		B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39B246D1868004C0F0D /* ParserManager.swift */; };
 		B112D39E246D2B9C004C0F0D /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39D246D2B9C004C0F0D /* Spinner.swift */; };
+		B112D3A0246D3A49004C0F0D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D39F246D3A49004C0F0D /* Logger.swift */; };
+		B112D3A2246D3A73004C0F0D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		B112D398246D16C1004C0F0D /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
 		B112D39B246D1868004C0F0D /* ParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserManager.swift; sourceTree = "<group>"; };
 		B112D39D246D2B9C004C0F0D /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		B112D39F246D3A49004C0F0D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +141,9 @@
 		B112D390246D07B5004C0F0D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */,
+				B112D3A1246D3A73004C0F0D /* Date+Extensions.swift */,
 				B112D395246D09A8004C0F0D /* String+Extensions.swift */,
+				B112D391246D07D2004C0F0D /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		B112D39A246D184B004C0F0D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B112D39F246D3A49004C0F0D /* Logger.swift */,
 				B112D39B246D1868004C0F0D /* ParserManager.swift */,
 			);
 			path = Managers;
@@ -235,10 +241,12 @@
 				B112D39E246D2B9C004C0F0D /* Spinner.swift in Sources */,
 				B112D38B246D059C004C0F0D /* MainTabBarController.swift in Sources */,
 				B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */,
+				B112D3A2246D3A73004C0F0D /* Date+Extensions.swift in Sources */,
 				B112D399246D16C1004C0F0D /* CD.swift in Sources */,
 				B112D36E246D01EE004C0F0D /* AppDelegate.swift in Sources */,
 				B112D38F246D0742004C0F0D /* ListViewController.swift in Sources */,
 				B112D396246D09A8004C0F0D /* String+Extensions.swift in Sources */,
+				B112D3A0246D3A49004C0F0D /* Logger.swift in Sources */,
 				B112D39C246D1868004C0F0D /* ParserManager.swift in Sources */,
 				B112D392246D07D2004C0F0D /* UIViewController+Extensions.swift in Sources */,
 				B112D394246D080A004C0F0D /* BaseViewController.swift in Sources */,

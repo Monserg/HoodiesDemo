@@ -27,10 +27,11 @@ class ServiceViewController: BaseViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        Logger.log(message: "dispatchWorkItem.cancel", event: .debug)
+
         super.viewDidDisappear(animated)
         
         self.stop()
-        print("cancel")
         dispatchWorkItem.cancel()
     }
 
@@ -43,6 +44,7 @@ class ServiceViewController: BaseViewController {
             if let url = URL(string: "https://www.w3schools.com/xml/cd_catalog.xml"), let parser = ParserManager(contentsOf: url) {
                 parser.completed = { catalog in
                     self.stop()
+                    Logger.log(message: "spinner.stop", event: .debug)
                 }
                 
                 parser.delegate = parser

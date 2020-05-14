@@ -6,10 +6,15 @@
   Copyright © 2020 Sergey Monastyrskiy. All rights reserved.
 */
 
+"ok" = "ok";
 "add" = "добавить";
+"info" = "инфо";
 "edit" = "редактировать";
 "done" = "выполнить";
 "list" = "список";
+"error" = "ошибка";
+"cancel" = "отмена";
 "revert" = "отменить";
 "service" = "сервис";
 "enter item name" = "введите имя объекта";
+"please, select `Done` button" = "пожалуйста, нажмите\nкнопку `Выполнить`";

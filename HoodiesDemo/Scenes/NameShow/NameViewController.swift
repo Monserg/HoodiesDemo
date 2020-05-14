@@ -54,6 +54,10 @@ class NameViewController: UIViewController {
     private func setupView() {
         self.title = (self.mode == .add ? "add" : "edit").localize()
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(image: UIImage(named: "icon-back-black"), style: .plain, target: self, action: #selector(backBarButtonTapped))
+        self.navigationItem.leftBarButtonItem = newBackButton
+
         view.addSubview(nameTextField)
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -91,6 +95,29 @@ class NameViewController: UIViewController {
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0),
             buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -69.0)
         ])
+        
+        // Add tap
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTepped))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    // MARK: - Actions
+    @objc func viewTepped(_ sender: UIView) {
+        self.nameTextField.resignFirstResponder()
+    }
+    
+    @objc func backBarButtonTapped(_ sender: UIBarButtonItem) {
+        Logger.log(message: "run", event: .debug)
+        
+        guard self.nameTextField.text == "" else {
+            self.showAlert(withTitle: "info".localize(),
+                           withMessage: "please, select `Done` button".localize())
+            
+            return
+        }
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

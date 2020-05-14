@@ -6,10 +6,15 @@
   Copyright © 2020 Sergey Monastyrskiy. All rights reserved.
 */
 
+"ok" = "ok";
 "add" = "add";
+"info" = "info";
 "edit" = "edit";
 "done" = "done";
 "list" = "list";
+"error" = "error";
+"cancel" = "cancel";
 "revert" = "revert";
 "service" = "service";
 "enter item name" = "enter item name";
+"please, select `Done` button" = "please, select\n`Done` button";

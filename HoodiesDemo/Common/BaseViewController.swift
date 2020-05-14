@@ -12,6 +12,14 @@ class BaseViewController: UIViewController {
     // MARK: - Properties
     let spinner = Spinner(style: UIActivityIndicatorView.Style.gray)
     
+    var whiteView: UIView {
+        let whiteViewInstance = UIView()
+        whiteViewInstance.frame = view.frame
+        whiteViewInstance.backgroundColor = .yellow
+        
+        return whiteViewInstance
+    }
+
     
     // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

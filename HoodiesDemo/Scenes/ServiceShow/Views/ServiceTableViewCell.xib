@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServiceTableViewCell" rowHeight="84" id="KGk-i7-Jjw" customClass="ServiceTableViewCell" customModule="HoodiesDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6SJ-Jn-D2V">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-8N-2nY" userLabel="Title Label">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxD-Cu-g6b" userLabel="Artist Label">
+                                <rect key="frame" x="0.0" y="36" width="38.5" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="JxD-Cu-g6b" firstAttribute="leading" secondItem="6SJ-Jn-D2V" secondAttribute="leading" constant="16" id="D5Y-Nt-gLR"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSE-cD-pac" userLabel="Year Label">
+                        <rect key="frame" x="276.5" y="8" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="6SJ-Jn-D2V" secondAttribute="bottom" id="1Mn-lK-C35"/>
+                    <constraint firstItem="6SJ-Jn-D2V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PfF-Aa-I5E"/>
+                    <constraint firstItem="6SJ-Jn-D2V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZT3-t5-lJ2"/>
+                    <constraint firstAttribute="trailing" secondItem="hSE-cD-pac" secondAttribute="trailing" constant="8" id="c9h-90-bJg"/>
+                    <constraint firstItem="hSE-cD-pac" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pru-g8-D3m"/>
+                    <constraint firstItem="hSE-cD-pac" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6SJ-Jn-D2V" secondAttribute="trailing" constant="16" id="x9c-Y1-qxQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistLabel" destination="JxD-Cu-g6b" id="cc1-TB-Sis"/>
+                <outlet property="titleLabel" destination="SyI-8N-2nY" id="2ZF-VM-Bs2"/>
+                <outlet property="yearLabel" destination="hSE-cD-pac" id="MlD-yg-T0b"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="157.36607142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

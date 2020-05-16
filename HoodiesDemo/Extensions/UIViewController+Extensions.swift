@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func showAlert(
-        withTitle title: String = "error".localize(),
+        withTitle title: String = "info".localize(),
         withMessage message: String,
         withCancelTitle cancelTitle: String? = nil,
         andActionTitle actionTitle: String = "ok".localize(),

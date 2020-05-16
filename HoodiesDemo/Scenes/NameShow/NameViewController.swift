@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 enum ModeType {
     case add
@@ -17,7 +18,8 @@ class NameViewController: UIViewController {
     // MARK: - Properties
     var item: Item?
     var mode: ModeType
-    
+    let realmManager = RealmManager()
+
     lazy var nameTextField: UITextField = {
         let nameTextFieldInstance = UITextField()
         nameTextFieldInstance.placeholder = "enter item name".localize()
@@ -81,10 +83,21 @@ class NameViewController: UIViewController {
         let doneButton = ActionButton(frame: .zero, title: "done", titleColor: .black, actionHandler: {
             Logger.log(message: "done", event: .debug)
 
+            guard let name = self.nameTextField.text else { self.showAlert(withMessage: "enter item name".localize()); return }
+            
+            // Realm
+            self.mode == .add ?
+                self.realmManager.addItem(name: name, complete: {
+                    self.navigationController?.popViewController(animated: true)
+                }) :
+                self.realmManager.updateItem(oldName: self.item!.name, newName: name, complete: {
+                    self.navigationController?.popViewController(animated: true)
+                })
         })
 
         let revertButton = ActionButton(frame: .zero, title: "revert", titleColor: .red, borderColor: .red, actionHandler: {
             Logger.log(message: "revert", event: .debug)
+            
             self.navigationController?.popViewController(animated: true)
         })
 
@@ -115,8 +128,7 @@ class NameViewController: UIViewController {
         Logger.log(message: "run", event: .debug)
         
         guard self.nameTextField.text == "" else {
-            self.showAlert(withTitle: "info".localize(),
-                           withMessage: "please, select `Done` button".localize())
+            self.showAlert(withMessage: "please, select `Done` button".localize())
             
             return
         }

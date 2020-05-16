@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26C1500D686CB31C861DD64D /* Pods_HoodiesDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F4E0D0ECCD676C39A01379 /* Pods_HoodiesDemo.framework */; };
+		B1079947246FEC9600606CBC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1079946246FEC9600606CBC /* RealmManager.swift */; };
 		B112D36E246D01EE004C0F0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D36D246D01EE004C0F0D /* AppDelegate.swift */; };
 		B112D370246D01EE004C0F0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D36F246D01EE004C0F0D /* SceneDelegate.swift */; };
 		B112D372246D01EE004C0F0D /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D371246D01EE004C0F0D /* ServiceViewController.swift */; };
@@ -34,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170410C0407678914C0291D6 /* Pods-HoodiesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoodiesDemo.debug.xcconfig"; path = "Target Support Files/Pods-HoodiesDemo/Pods-HoodiesDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2253B888A1DA528BF8B5FE47 /* Pods-HoodiesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoodiesDemo.release.xcconfig"; path = "Target Support Files/Pods-HoodiesDemo/Pods-HoodiesDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B1079946246FEC9600606CBC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		B112D36A246D01EE004C0F0D /* HoodiesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoodiesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B112D36D246D01EE004C0F0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B112D36F246D01EE004C0F0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		B112D3BB246DB855004C0F0D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B112D3BE246DC00D004C0F0D /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3BF246DC00D004C0F0D /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		F7F4E0D0ECCD676C39A01379 /* Pods_HoodiesDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoodiesDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,17 +74,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C1500D686CB31C861DD64D /* Pods_HoodiesDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		684E9C7B33439147C9C795E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				170410C0407678914C0291D6 /* Pods-HoodiesDemo.debug.xcconfig */,
+				2253B888A1DA528BF8B5FE47 /* Pods-HoodiesDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D4A2E79BFD3AF5A79F92C87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7F4E0D0ECCD676C39A01379 /* Pods_HoodiesDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B112D361246D01EE004C0F0D = {
 			isa = PBXGroup;
 			children = (
 				B112D36C246D01EE004C0F0D /* HoodiesDemo */,
 				B112D36B246D01EE004C0F0D /* Products */,
+				684E9C7B33439147C9C795E8 /* Pods */,
+				9D4A2E79BFD3AF5A79F92C87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +206,7 @@
 			children = (
 				B112D39F246D3A49004C0F0D /* Logger.swift */,
 				B112D39B246D1868004C0F0D /* ParserManager.swift */,
+				B1079946246FEC9600606CBC /* RealmManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -225,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B112D37E246D01EF004C0F0D /* Build configuration list for PBXNativeTarget "HoodiesDemo" */;
 			buildPhases = (
+				16EF3599EAD2FF6795FF0D38 /* [CP] Check Pods Manifest.lock */,
 				B112D366246D01EE004C0F0D /* Sources */,
 				B112D367246D01EE004C0F0D /* Frameworks */,
 				B112D368246D01EE004C0F0D /* Resources */,
+				E32A1E250C14955B25CBBF22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +316,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16EF3599EAD2FF6795FF0D38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoodiesDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E32A1E250C14955B25CBBF22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoodiesDemo/Pods-HoodiesDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoodiesDemo/Pods-HoodiesDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoodiesDemo/Pods-HoodiesDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B112D366246D01EE004C0F0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -309,6 +380,7 @@
 				B112D392246D07D2004C0F0D /* UIViewController+Extensions.swift in Sources */,
 				B112D394246D080A004C0F0D /* BaseViewController.swift in Sources */,
 				B112D370246D01EE004C0F0D /* SceneDelegate.swift in Sources */,
+				B1079947246FEC9600606CBC /* RealmManager.swift in Sources */,
 				B112D3A6246D6C27004C0F0D /* ServiceTableViewCell.swift in Sources */,
 				B112D3AA246D7777004C0F0D /* NameViewController.swift in Sources */,
 			);
@@ -455,6 +527,7 @@
 		};
 		B112D37F246D01EF004C0F0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 170410C0407678914C0291D6 /* Pods-HoodiesDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -473,6 +546,7 @@
 		};
 		B112D380246D01EF004C0F0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2253B888A1DA528BF8B5FE47 /* Pods-HoodiesDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

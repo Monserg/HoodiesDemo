@@ -7,20 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListViewController: BaseViewController {
     // MARK: - Properties
+    var items: Results<Item>!
+    let realmManager = RealmManager()
     let tableView: UITableView = UITableView()
-
-    var items: [Item]? {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.tableView.isHidden = false
-            }
-        }
-    }
-
+        
     
     // MARK: - Class functions
     override func viewDidLoad() {
@@ -32,19 +26,14 @@ class ListViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         setupView()
-        loadData()
+        self.items = self.realmManager.loadItems()
+        self.tableView.reloadData()
+        
+        Logger.log(message: Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "XXX", event: .debug)
     }
     
     
     // MARK: - Custom functions
-    private func loadData() {
-        self.items = [
-            Item(id: 0, name: "ssssss ....", isChecked: false),
-            Item(id: 1, name:  "ddd XXX", isChecked: true)
-        ]
-//        self.tableView.reloadData()
-    }
-    
     private func setupView() {
         self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add,
                                                                   target: self,
@@ -66,10 +55,7 @@ class ListViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-//        tableView.isHidden = true
-//        tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
-
     }
     
     
@@ -88,15 +74,20 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items?.count ?? 0
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let item = self.items?[indexPath.row] else { return UITableViewCell() }
-            
         guard let listCell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
                 
+        let item = self.items[indexPath.row]
         listCell.setup(withItem: item)
+        
+        listCell.checkComplete = { isSelected in
+            self.realmManager.updateItem(oldName: item.name, newName: item.name, isChecked: isSelected, complete: {
+                self.tableView.reloadRows(at: [indexPath], with: .fade)
+            })
+        }
         
         return listCell
     }
@@ -110,9 +101,7 @@ extension ListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? ListTableViewCell {
-            self.show(NameViewController(modeType: .edit, item: cell.item), sender: nil)
-        }
+        self.show(NameViewController(modeType: .edit, item: self.items[indexPath.row]), sender: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -121,17 +110,17 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let menuEditButton = UITableViewRowAction(style: .normal, title: "edit".localize()) { action, index in
-            self.show(NameViewController(modeType: .edit, item: Item(id: 1, name: "sergo", isChecked: true)), sender: nil)
+            self.show(NameViewController(modeType: .edit, item: self.items[editActionsForRowAt.row]), sender: nil)
         }
         
         menuEditButton.backgroundColor = .orange
 
         let menuDeleteButton = UITableViewRowAction(style: .normal, title: "delete".localize()) { action, index in
-            self.items?.remove(at: editActionsForRowAt.row)
-            self.tableView.deleteRows(at: [editActionsForRowAt], with: .fade)
-
-            // Delete item in Realm
+            // Realm
+            let item = self.items[editActionsForRowAt.row]
             
+            self.realmManager.delete(item: item)
+            self.tableView.deleteRows(at: [editActionsForRowAt], with: .fade)
         }
         
         menuDeleteButton.backgroundColor = .blue

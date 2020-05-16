@@ -10,7 +10,7 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     // MARK: - Properties
-    var item: Item!
+    var checkComplete: ((Bool) -> Void)?
     
     
     // MARK: - IBOutlets
@@ -40,24 +40,22 @@ class ListTableViewCell: UITableViewCell {
     
     // MARK: - Custom functions
     func setup(withItem item: Item) {
-        self.item = item
-        
         self.itemStatusButton.isSelected = item.isChecked
         self.itemNameLabel.text = item.name
         self.setImage()
     }
     
     private func setImage() {
-        self.itemImageView.image = UIImage(named: item.isChecked ? "icon-ok-green" : "icon-cancel-red")
+        self.itemImageView.image = UIImage(named: self.itemStatusButton.isSelected ? "icon-ok-green" : "icon-cancel-red")
     }
     
     
     // MARK: - Actions
     @IBAction func statusButtonTapped(_ sender: UIButton) {
-        sender.isSelected  = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         self.setImage()
        
         // Save to Realm
-        
+        checkComplete!(sender.isSelected)
     }
 }

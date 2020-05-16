@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Item {
-    let id: Int
-    let name: String
-    let isChecked: Bool
+class Item: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var isChecked = false
 }

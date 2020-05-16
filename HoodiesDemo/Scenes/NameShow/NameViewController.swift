@@ -90,7 +90,7 @@ class NameViewController: UIViewController {
                 self.realmManager.addItem(name: name, complete: {
                     self.navigationController?.popViewController(animated: true)
                 }) :
-                self.realmManager.updateItem(oldName: self.item!.name, newName: name, complete: {
+                self.realmManager.updateItem(oldName: self.item!.name, newName: name, isChecked: self.item!.isChecked, complete: {
                     self.navigationController?.popViewController(animated: true)
                 })
         })
